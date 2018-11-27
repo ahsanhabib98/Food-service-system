@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Add Items{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>Add Items</h1>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+
+            <button type="submit" value="Home"><a href="{% url 'food-details' food-details.pk %}">Add</a></button>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

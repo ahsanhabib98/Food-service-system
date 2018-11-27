@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cooks</title>
+</head>
+<body>
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>Cooks</h1>
+            {% for cooks in cook_info %}
+            <div class="row">
+                <div class="col-xs-12 col-md-7">
+                    <img class="img-thumbnail" src="{{ cooks.cook_image.url }}" alt="image">
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <table>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{ cooks.cook_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Contact Number:</th>
+                            <td>{{ cooks.contact_no }}</td>
+                        </tr>
+                        <tr>
+                            <th>Area:</th>
+                            <td>{{ cooks.area }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

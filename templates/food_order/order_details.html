@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Order Details{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>Clients</h1>
+            <form action="">
+                <div class="alert alert-success text-center my-2" role="alert"> <strong>Order Successful</strong> </div>
+                <table class="my-3">
+                    <tr>
+                        <th>Name:</th>
+                        <td>{{ order_details.client_info.client_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Name:</th>
+                        <td>{{ order_details.food_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cook Name:</th>
+                        <td>{{ order_details.provider.cook_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Area:</th>
+                        <td>{{ order_details.area.area_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Quantity:</th>
+                        <td>{{ order_details.quantity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Delivery Point:</th>
+                        <td>{{ order_details.delivery_point }}</td>
+                    </tr>
+                    <tr>
+                        <th>Price:</th>
+                        <td>{{ price }}</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

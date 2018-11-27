@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Item Detail{% endblock %}</title>
+
+{% block content %}
+
+<div class="main-content">
+    <div class="profileDetails">
+        <div class="card p-3">
+            <h1>{{ food_details_info.name }}</h1>
+            <div class="row">
+                <div class="col-xs-12 col-md-7">            
+                    <img class="img-thumbnail" src="{{ food_details_info.food_image.url }}" width="100%">
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <table>
+                        <tr>
+                            <th>Category:</th>
+                            <td>{{ food_details_info.category }}</td>
+                        </tr>
+                        <tr>
+                            <th>Minimum Quantity:</th>
+                            <td>{{ food_details_info.minimum_quantity }} set</td>
+                        </tr>
+                        <tr>
+                            <th>Price:</th>
+                            <td>{{ food_details_info.price }} Tk/set</td>
+                        </tr>
+                        <tr>
+                            <th>Area:</th>
+                            <td>{{ food_details_info.area }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cook:</th>
+                            <td>{{ food_details_info.provider }}</td>
+                        </tr>
+                        <tr>
+                            <th>CDelivery Pointook:</th>
+                            <td>{{ food_details_info.delivery_point }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status:</th>
+                            <td>{{ food_details_info.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>Date:</th>
+                            <td>{{ food_details_info.posted_at }}</td>
+                        </tr>
+                    </table>
+                    <!-- Button -->
+                    <a class='btn btn-dark btn-sm mt-3 mb-0' target="_blank" href='#' style="width: 100%">Order Now</a>
+                    <!-- Button -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
