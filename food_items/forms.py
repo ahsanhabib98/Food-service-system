@@ -10,6 +10,7 @@ class FoodItemsForm(forms.ModelForm):
     class Meta:
         model = FoodItems
         fields = '__all__'
+        exclude = ['slug']
         widgets = {
             'name': TextInput(attrs={'class':'form-control'}),
             'category': Select(attrs={'class':'form-control'}),

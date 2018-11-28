@@ -36,13 +36,12 @@ def food_details(request, pk):
 
 def add_items(request):
     if request.method == 'POST':
-        add_items_info = FoodItemsForm(request.POST)
-
+        add_items_info = FoodItemsForm(request.POST, request.FILES)
         if add_items_info.is_valid():
-            add_items_info.save()
-            return food_details(request, request.pk)
+            obj = add_items_info.save()
+            return food_details(request, obj.pk)
 
     else:
         add_items_info = FoodItemsForm()
 
-    return redirect(request, 'food_items/.html', {'add_items_info': add_items_info})
+    return render(request, 'food_items/add_items.html', {'add_items_info': add_items_info})
